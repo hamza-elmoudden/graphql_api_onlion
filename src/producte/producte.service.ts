@@ -3,14 +3,14 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Producte } from './Schema/prodcut.schema';
 import { Model } from 'mongoose';
 import { GraphQLError } from 'graphql';
-import { Firebaseimage } from './firebase.image';
+// import { Firebaseimage } from './firebase.image';
 import { PorductInput } from './Type/createprod.input';
 
 @Injectable()
 export class ProducteService {
     constructor(
         @InjectModel(Producte.name) private producteModel:Model<Producte>,
-        private readonly firabe:Firebaseimage,
+        // private readonly firabe:Firebaseimage,
     ){}
 
 
