@@ -1,0 +1,56 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Productstpye {
+  _id: String!
+  title: String!
+  descraption: String!
+  price: String!
+  color: [String!]!
+  image_one: String!
+  image_tow: String!
+  image_three: String!
+}
+
+type Usertpye {
+  _id: String!
+  name: String!
+  email: String!
+  password: String!
+}
+
+type SignInResponse {
+  accessToken: String!
+}
+
+type Cardtype {
+  _id: String!
+  list: [Productstpye!]!
+}
+
+type Query {
+  Sayhi: String!
+  Producte: [Productstpye!]!
+  Userfind(id: FindUserByIdInput!): Usertpye!
+  Getcard: Cardtype!
+}
+
+input FindUserByIdInput {
+  id: String!
+}
+
+type Mutation {
+  signIn(login: Logininput!): SignInResponse!
+  addtocard(id: CardInput!): Cardtype!
+  Deletocard(id: CardInput!): Cardtype!
+}
+
+input Logininput {
+  email: String!
+  password: String!
+}
+
+input CardInput {
+  id: String!
+}
